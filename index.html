@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đề 1</title>
+
+  <script src="JS/jquery-3.6.0.min.js"></script>
+  <script src="JS/bootstrap.js"></script>
+  <script src="JS/main.js"></script>
+
+  <link rel="stylesheet" href="CSS/bootstrap.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        <img src="IMG/logo.PNG" alt="" width="180" height="100%">
+      </div>
+      <div class="col-md-10 bg-primary">
+        <h2 class="text-center" style="color: black;">TRƯỜNG ĐẠI HỌC CÔNG NGHIỆP THÀNH PHỐ HỒ CHÍ MINH</h2>
+        <p class="text-center text-danger">KHOA CÔNG NGHỆ THÔNG TIN</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <nav class="navbar navbar-inverse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="navbar-item">
+              <a href="" class="navbar-link">FIT</a>
+            </li>
+            <li class="navbar-item">
+              <a href="" class="navbar-link">Giảng viên</a>
+            </li>
+            <li class="navbar-item">
+              <a href="" class="navbar-link">Sinh viên</a>
+            </li>
+            <li class="navbar-item">
+              <a class="navbar-link" id="doanTN">Đoàn TN</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-3">
+        <img src="IMG/ngayhoithanhnien.JPG" alt="" style="border-radius: 50%;" width="300" height="100%">
+      </div>
+      <div class="col-md-9">
+        <br>
+        <br>
+        <table class="table table-striped" id="table">
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>MÃ SV</th>
+              <th>HỌ TÊN</th>
+              <th>GIỚI TÍNH</th>
+              <th>NĂNG KHIẾU</th>
+              <th>EMAIL</th>
+              <th>THÀNH PHỐ</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row bg-primary">
+      <div class="col-md-12">
+        <h3 class="text-center">KHOA CÔNG NGHỆ THÔNG TIN</h3>
+      </div>
+      <div class="col-md-12">
+        <p class="text-center">LỚP: DHKTPM16BTT</p>
+      </div>
+    </div>
+
+    <div class="modal fade" role="dialog" id="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="text-center">THÔNG TIN ĐĂNG KÝ</h3>
+            <button class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <form action="" class="form-horizontal">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label for="maSinhVien" class="control-label">Mã sinh viên:</label>
+                    </div>
+                    <div class="col-md-8">
+                      <p class="text-danger" id="resultMaSinhVien">*</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <input type="text" name="maSinhVien" id="maSinhVien" class="form-control" required>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label for="hoTen" class="control-label">Họ tên:</label>
+                    </div>
+                    <div class="col-md-8">
+                      <p class="text-danger" id="resultHoTen">*</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <input type="text" name="hoTen" id="hoTen" class="form-control" required>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label for="email" class="control-label">Email:</label>
+                    </div>
+                    <div class="col-md-8">
+                      <p class="text-danger" id="resultEmail">*</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <input type="email" name="email" id="email" class="form-control" placeholder="xxxx@iuh.edu.vn" required>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label for="nangKhieu" class="control-label">Năng khiếu:</label>
+                    </div>
+                    <div class="col-md-8">
+                      <p class="text-danger" id="resultNangKhieu">*</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <br>
+                      <input type="checkbox" name="nangKhieu" id="boi" value="Bơi"> Bơi
+                      <input type="checkbox" name="nangKhieu" style="margin-left: 14px;" id="cauLong" value="Cầu lông"> Cầu lông
+                      <input type="checkbox" name="nangKhieu" style="margin-left: 14px;" id="bongChuyen" value="Bóng chuyền"> Bóng chuyền
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label for="thanhPho" class="control-label">Thành phố:</label>
+                      <select name="thanhPho" id="thanhPho">
+                        <option value="Quảng Ngãi">Quảng Ngãi</option>
+                        <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+                        <option value="Cần Thơ">Cần Thơ</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <p class="text-danger" id="resultThanhPho">*</p>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="form-group" style="padding-left: 20px;">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label for="gioiTinh" class="control-label">Giới tính:</label>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row" style="padding-bottom: 10px;">
+                    <div class="col-md-12">
+                      <input type="radio" name="gioiTinh" id="nam" value="Nam" checked> Nam
+                    </div>
+                  </div>
+                  <div class="row" style="padding-bottom: 10px;">
+                    <div class="col-md-12">
+                      <input type="radio" name="gioiTinh" id="nu" value="Nữ"> Nữ
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <input type="radio" name="gioiTinh" id="khac" value="Khác"> Khác
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div style="display:flex;justify-content: center;">
+              <input type="submit" class="btn btn-warning text-justify" value="Đăng Ký" id="btnDangKy">
+              <p class="text-danger" id="resultDangKy">*</p>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+</body>
+</html>
